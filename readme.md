@@ -136,7 +136,14 @@ We welcome developers and researchers to contribute code or provide suggestions 
 
 Part of the design of this project references [JudeJiwoo/nmt](https://github.com/JudeJiwoo/nmt), and we would like to express our gratitude here 🙏.
 
+*** 
 
+## ⚠️ Notes
+
+The current model is relatively small and may not always generate MIDI that fully matches the description.  
+You can try **slightly adjusting parameters such as temperature or top-p** to improve the results.  
+
+We will continue to improve the model to provide more stable and higher-quality generation.
 
 ***
 
@@ -153,3 +160,4 @@ If you find Amadeus helpful for your research or create，please cite our paper:
   journal = {arXiv preprint arXiv:2508.20665},
   year    = {2025}
 }
+

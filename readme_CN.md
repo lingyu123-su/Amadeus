@@ -86,7 +86,12 @@ Amadeus 的研发受到音乐与 AI 社区的启发，旨在 **服务音乐创�
 本项目部分设计参考了 [JudeJiwoo/nmt](https://github.com/JudeJiwoo/nmt)，在此表示感谢 🙏。
 
 
+## ⚠️ 注意事项
 
+当前模型规模较小，并不总是能生成完全符合描述的 MIDI。  
+您可以尝试 **适当调整温度（temperature）、阈值（top-p 等参数）** 来改善结果。  
+
+我们会持续改进模型，以提供更稳定和高质量的生成体验。---
 
 ---
 
@@ -100,3 +105,4 @@ Amadeus 的研发受到音乐与 AI 社区的启发，旨在 **服务音乐创�
   journal = {arXiv preprint arXiv:2508.20665},
   year    = {2025}
 }
+
