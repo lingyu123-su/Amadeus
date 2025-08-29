@@ -17,4 +17,5 @@ models/
 .vscode/
 checkpoints/
 generate-batch*
-train*
+trainer*
+train_ac*

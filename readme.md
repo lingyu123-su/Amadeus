@@ -55,11 +55,11 @@ First run:
 ```bash
 # Chinese interface
 
-python demo/Amadeus\_app\_CN.py
+python demo/Amadeus_app_CN.py
 
 # English interface
 
-python demo/Amadeus\_app\_EN.py
+python demo/Amadeus_app_EN.py
 ```
 
 > Note: 
