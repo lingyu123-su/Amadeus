@@ -1,0 +1,9 @@
+transformers
+torch 
+gradio 
+omegaconf 
+x_transformers 
+matplotlib 
+music21 
+muspy
+SentencePiece

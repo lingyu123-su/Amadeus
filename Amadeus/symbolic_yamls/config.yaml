@@ -1,0 +1,54 @@
+defaults:
+  # - nn_params: nb8_embSum_NMT
+  # - nn_params: remi8
+  # - nn_params: nb8_embSum_diff
+   - nn_params: nb8_embSum_subFeedForward
+  #  - nn_params: nb8_SA_diff
+  # - nn_params: nb8_embSum_diff_main12head16dim512_ave
+  # - nn_params: nb8_embSum_NMT_main12_head_16_dim512
+  # - nn_params: remi8_main12_head_16_dim512
+    # - nn_params: nb5_embSum_diff_main12head16dim768_sub3
+
+dataset:  LakhClean # Pop1k7, Pop909, SOD, LakhClean
+use_ddp: True # True, False | distributed data parallel
+use_fp16: True # True, False | mixed precision training
+use_diff: True # True,use diffusion in subdecoder
+use_dispLoss: True
+lambda_weight: 0.5
+tau: 0.5
+diff_steps: 8 # number of diffusion steps
+train_params:
+  device: cuda
+  batch_size: 8
+  grad_clip: 1.0
+  num_iter: 25000  # total number of iterations
+  num_cycles_for_inference: 10 # number of cycles for inference, iterations_per_validation_cycle * num_cycles_for_inference
+  num_cycles_for_model_checkpoint: 10 # number of cycles for model checkpoint, iterations_per_validation_cycle * num_cycles_for_model_checkpoint
+  iterations_per_training_cycle: 10 # number of iterations for logging training loss
+  iterations_per_validation_cycle: 500 # number of iterations for validation process
+  input_length: 3072 # input sequence length3072
+  # you can use focal loss, it it's not used, set focal_gamma to 0
+  focal_alpha: 1
+  focal_gamma: 0
+  # learning rate scheduler: 'cosinelr', 'cosineannealingwarmuprestarts', 'not-using', please check train_utils.py for more details
+  scheduler : cosinelr
+  initial_lr: 0.0001
+  decay_step_rate: 0.4 # means it will reach its lowest point at decay_step_rate * total_num_iter
+  num_steps_per_cycle: 20000 # number of steps per cycle for 'cosineannealingwarmuprestarts'
+  warmup_steps: 2000 # number of warmup steps
+  max_lr: 0.00015 
+  gamma: 0.6 # the decay rate for 'cosineannealingwarmuprestarts'
+  # Distributed Data Parallel
+  world_size: 5 # 0 means no distributed training
+  gradient_accumulation_steps: 1 # 1 means no gradient accumulation
+inference_params:
+  num_uncond_generation: 1 # number of unconditional generation
+  num_cond_generation: 3 # number of conditional generation
+data_params:
+  first_pred_feature: pitch # compound shifting for NB only, choose the target sub-token (remi and cp are not influenced by this argument)
+  split_ratio: 0.99 # train-validation-test split ratio
+  aug_type: null # random, null | pitch and chord augmentation type
+general:
+  debug: False
+  make_log: True # True, False | update the log file in wandb online to your designated project and entity
+  infer_and_log: True # True, False | inference and log the results
