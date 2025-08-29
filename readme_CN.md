@@ -19,16 +19,6 @@
 
 ---
 
-## 🎧 Demo
-<div style="text-align: center;">
-  <audio controls>
-    <source src="assets/exp_amadeus.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
-
----
-
 ## 📅 更新日志
 - 2025-08-28：公布推理代码和 **Amadeus-S** 模型
 
