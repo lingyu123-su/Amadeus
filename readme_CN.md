@@ -20,7 +20,12 @@
 ---
 
 ## 🎧 Demo
-<a href="assets/exp_amadeus.mp3" target="_blank">Play audio</a>
+<div style="text-align: center;">
+  <audio controls>
+    <source src="assets/exp_amadeus.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
 
 ---
 
