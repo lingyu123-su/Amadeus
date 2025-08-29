@@ -1,5 +1,14 @@
 # 🎵 Amadeus: Autoregressive Model with Bidirectional Attribute Modelling for Symbolic Music
 
+<p align="center">
+  <a href="https://huggingface.co/longyu1315/Amadeus-S">
+    <img src="https://img.shields.io/badge/🤗-Amadeus--S-yellow" alt="HuggingFace">
+  </a>
+  <a href="https://arxiv.org/abs/2508.20665">
+    <img src="https://img.shields.io/badge/arXiv-2508.20665-blue" alt="arXiv">
+  </a>
+</p>
+
 **Amadeus** is a novel **symbolic music (MIDI) generation framework**. We use **autoregressive modeling** for note sequences, **discrete diffusion models** for intra-note attributes, and **representation optimization** to enhance model performance. Compared to current mainstream autoregressive or hierarchical autoregressive models, Amadeus achieves significant improvements in **generation quality, speed, and controllability**. While significantly improving generation quality, we have achieved a speedup of at least **4x** compared to pure autoregressive models. We also support a training-free **fine-grained attribute control** mechanism, which endows Amadeus with maximum flexibility. We will continuously update the **code, models, and datasets**.
 
 
